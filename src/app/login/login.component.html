@@ -1,0 +1,27 @@
+<section class="pxx-3">
+    <div class="bg-blue1">
+        <div class="gradient-bg ptt-2">
+            <h1 class="text-center fs-40">ULP Benefits</h1>
+        </div>
+        <div class="fs-24 text-center ptt-4"> ULP Benefits</div>
+        <div class="fs-15 text-center ptt-3"> Welcome benefits provider to ULP benefits!</div>
+        <div class="flex ptt-3">
+            <div>Your organization</div>
+            <select class="select" id="" [(ngModel)]="selectedValue" (ngModelChange)="onModelChange($event)" #status="ngModel">
+                <option [ngValue]="undefined" [disabled]="true">Select Trust</option>
+                <option class="bg-white" *ngFor="let user of userDetails" [value]="user.username">{{user.username}}
+                </option>
+            </select>
+        </div>
+        <div class="flex ptt-3">
+            <div>Enter your phone</div>
+            <input class="select" type="text" [(ngModel)]="phone">
+            <button class="btn" (click)="getOTP()">Get Otp</button>
+        </div>
+        <div class="flex ptt-3">
+            <div>Enter OTP</div>
+            <input class="select" type="text" [(ngModel)]="otp">
+            <button class="btn" (click)="login()">Login</button>
+        </div>
+    </div>
+</section>

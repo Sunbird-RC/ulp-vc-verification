@@ -1,0 +1,93 @@
+{
+    "type": "opensaberLayoutSchema",
+    "version": "0.1",
+    "limit": "15",
+    "tables": [
+        {
+            "nha-admin-attestation": {
+                "api": "/nha-admin/claims?size=1000",
+                "title": "CBSE_BOARD_ATTESTATIONS",
+                "fields": [
+                    {
+                        "name": "createdAt",
+                        "title": "SUBMITTED_DATE",
+                        "formate": "date"
+                    },
+                    {
+                        "name": "propertyData.personalDetails.firstName",
+                        "title": "NAME"
+                    },
+                    {
+                        "custom": true,
+                        "title": "ACTION",
+                        "type": "button",
+                        "buttonText": "ATTEST",
+                        "redirectTo": "/nha-admin/attestation/nha-admin-attestation/:id"
+                    }
+                ]
+            }
+        },
+        {
+            "transplantcoordinator-livedonor": {
+                "api": "LiveDonor",
+                "title": "",
+                "fields": [
+                    {
+                        "name": "donorDetails.firstName",
+                        "title": "Donors",
+                        "formate": ""
+                    },
+                    {
+                        "name": "donorDetails.emailId",
+                        "title": "Email Id",
+                        "formate": ""
+                    },
+                    {
+                        "name": "crossMatching",
+                        "title": "HLA Cross Match",
+                        "formate": ""
+                    },
+                    {
+                        "name": "status",
+                        "title": "Status",
+                        "formate": ""
+                    },
+                    {
+                        "custom": true,
+                        "title": "ACTION",
+                        "type": "button",
+                        "buttonText": "Edit",
+                        "redirectTo": "/form/livedonor/:osid"
+                    }
+                ]
+            }
+        },
+        {
+            "transplantcoordinator-recipient": {
+                "api": "Recipient",
+                "title": "",
+                "fields": [
+                    {
+                        "name": "recipientDetails.firstName",
+                        "title": "Recipients"
+                    },
+                    {
+                        "name": "bloodGroupDetails.group",
+                        "title": "Blood Group"
+                    },
+                    {
+                        "name": "organsOrTissues.organsNeeded",
+                        "title": "Organs or Tissues Needed"
+                    },
+                    {
+                        "custom": true,
+                        "title": "ACTION",
+                        "type": "button",
+                        "buttonText": "Edit",
+                        "redirectTo": "/form/recipient/:osid"
+                    }
+                ]
+            }
+        }
+    ]
+}

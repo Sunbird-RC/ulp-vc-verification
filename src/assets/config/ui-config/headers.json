@@ -1,0 +1,73 @@
+{
+    "type": "opensaberLayoutSchema",
+    "version": "0.1",
+    "headers": [
+        {
+            "plain":{
+                "left": [],
+                "right":[
+                    {
+                    }
+                ]
+            }
+        },
+        {
+            "default":{
+                "left": [],
+                "right":[
+                    {
+                        "title": "HOME",
+                        "redirectTo": "/"
+                    }
+                ]
+            }
+        },
+        {
+            "pledge": {
+                "left": [
+
+                ],
+                "right": [
+                    {
+                        "title": "LOGOUT",
+                        "redirectTo": "/logout",
+                        "className" : "font-weight-bold"
+                    }
+                ]
+            }
+        },
+        {
+            "donor-setup": {
+                "left": [],
+                "right": []
+            }
+        },
+        {
+            "nha-admin": {
+                "left": [
+                    {
+                        "title": "ATTESTATIONS",
+                        "redirectTo": "/profile/nha-admin"
+                    }
+                ],
+                "right": [
+                    {
+                        "title": "LOGOUT",
+                        "redirectTo": "/logout",
+                        "className" : "font-weight-bold"
+                    }
+                ]
+            }
+        },
+        {
+            "transplantcoordinator": {
+                "left": [ ],
+                "right": [{
+                    "title": "LOGOUT",
+                    "redirectTo": "/logout",
+                    "className" : "font-weight-bold"
+                } ]
+            }
+        }        
+    ]
+}
