@@ -1,18 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BenefitComponent } from './benefit/benefit.component';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './services/auth/authguard.service';
-import { VerifyCertificateComponent } from './verify-certificate/verify-certificate.component';
+import { ScanQrCodeComponent } from './scan-qr-code/scan-qr-code.component';
 
 const routes: Routes = [
 
-{ path: '', component: LoginComponent },
-
-{ path: 'benefit', component: BenefitComponent },
-
-{ path: 'verify-certificate', component: VerifyCertificateComponent },
-
+  { path: '', component: ScanQrCodeComponent },
+  { path: 'verify/:credentialId', component: ScanQrCodeComponent },
 ];
 
 @NgModule({

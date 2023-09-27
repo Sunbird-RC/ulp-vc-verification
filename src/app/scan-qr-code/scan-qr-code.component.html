@@ -1,0 +1,61 @@
+<div class="container text-center">
+    <div class="text-center" *ngIf="scanQrCode">
+        <h4 class="ver-portal">ULP verification portal</h4>
+        <img class="mt-5" src="assets/images/scanner.png" alt="scanner">
+        <p class="scan-ler text-center">{{'SCAN_LEARNER_PASSPORT' | translate}}</p>
+        <div class="scan-btn">
+            <button type="button" class="btn-scan" (click)="scan()">{{'SCAN_NOW' | translate}}</button>
+        </div>
+
+        <div class="or mt-4">{{'OR' | translate}}</div>
+        <div class="container">
+            <p class="scan-ler text-center">{{'BENEFIT_PROVIDER' | translate}}</p>
+            <div class="scan-btn d-flex justify-content-center">
+                <button type="button" class="btn-scan mb-5">{{'CLICK_HERE' | translate}}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ptt-2">
+        <div class="chk1 text-center" *ngIf="verified">
+            <ng-container *ngIf="!expired">
+                <img src="assets/icons/verify.svg" alt="verify">
+                <p class="verify pt-1">{{'CREDENTIAL_VERIFIED' | translate}}</p>
+            </ng-container>
+            <ng-container *ngIf="expired">
+                <img src="assets/icons/cross.svg" alt="cross">
+                <p class=" verify pt-1">{{'CREDENTIAL_EXPIRED' | translate}}</p>
+            </ng-container>
+            <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
+        </div>
+        <div class="chk1 text-center" *ngIf="notVerified">
+            <img src="assets/icons/cross.svg" alt="cross">
+            <P class="verify pt-1">{{'CREDENTIAL_NOT_VERIFIED' | translate}}</P>
+        </div>
+        <div class="chk1 text-center" *ngIf="invalidQRCode">
+            <img src="assets/icons/cross.svg" alt="cross">
+            <p class="fs-20">{{'INVALID_QR_CODE' | translate}}</p>
+        </div>
+        <ng-container *ngIf="verified || notVerified || invalidQRCode">
+            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">
+                {{'SCAN_NEXT' | translate}}</button>
+        </ng-container>
+    </div>
+
+    <div class="scanner text-center" *ngIf="!isScanCompleted">
+        <quar-scanner (scanSuccess)="scanSuccessHandler($event)" (scanError)="onError($event)"></quar-scanner>
+    </div>
+    <button type="button" class="btn-scan mt-4 mb-3" *ngIf="!isScanCompleted" (click)="back()">{{'GO_BACK' | translate}}</button>
+    <div class="text-center mt-5" *ngIf="false">
+        <img src="assets/images/flash.png" alt="" class="pr-4">
+        <img src="assets/images/frontcamera.png" alt="">
+    </div>
+
+    <div class="scan-result" *ngIf="loader">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border">
+                <span class="sr-only">{{'LOADING' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</div>
