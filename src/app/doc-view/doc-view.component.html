@@ -1,0 +1,17 @@
+<div class="mt-3 pb-3">
+
+  <div class="text-center" *ngIf="loader">
+    <div class="center-loading">
+      <div class="spinner-border">
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="extension === 'pdf'">
+    <div class="text-center img-mb">
+      <ngx-extended-pdf-viewer [showToolbar]="false" [showBorders]="false" [src]="docUrl"></ngx-extended-pdf-viewer>
+    </div>
+  </ng-container>
+
+ 
+</div>

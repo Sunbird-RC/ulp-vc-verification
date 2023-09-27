@@ -6,7 +6,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://ulp.uniteframework.io/ulp-bff',
   schemaUrl: 'assets/config/schema.json', //asset path OR URL
   logo: 'assets/images/logo.png', //asset path OR URL
   keycloakConfig: {
